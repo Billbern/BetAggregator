@@ -1,17 +1,10 @@
-# celery = make_celery(flask_app)
-
-# @celery.task()
-# def get_dog_pics(breed_type, limit):
-#     pass
-
 import os
 from flask import Flask, render_template
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
 from app.config import DevelopmentConfig
-
-from app.utils.celeryinit import make_celery
+from app.config.celeryconfig import make_celery
 
 app = Flask(__name__)
 app.config.from_object(DevelopmentConfig)
