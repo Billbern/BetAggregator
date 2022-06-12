@@ -1,0 +1,78 @@
+1654973195644	geckodriver	INFO	Listening on 127.0.0.1:53559
+1654973196143	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--ignore-certificate-errors" "--incognito" "--headless" "--remote-debugging-port" "53051" "-no-remote" "-profile" "/tmp/rust_mozprofileHNZUWS"
+*** You are running in headless mode.
+1654973196601	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileHNZUWS/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53051/devtools/browser/f7757818-aa8e-49b9-8d5b-91a39c069277
+1654973198334	Marionette	INFO	Listening on port 33465
+1654973198408	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://cdn.betway.com.gh/bundles/om.js, line 3670: unreachable code after return statement
+1654973283851	Marionette	INFO	Stopped listening on port 33465
+1655008952638	geckodriver	INFO	Listening on 127.0.0.1:45773
+1655008953123	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--ignore-certificate-errors" "--incognito" "--headless" "--remote-debugging-port" "53249" "-no-remote" "-profile" "/tmp/rust_mozprofilearDh8G"
+*** You are running in headless mode.
+1655008953496	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilearDh8G/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53249/devtools/browser/4ee63fdc-9c30-49fd-aece-e8cdfec2c2e6
+1655008954570	Marionette	INFO	Listening on port 38263
+1655008954641	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://cdn.betway.com.gh/bundles/om.js, line 3670: unreachable code after return statement
+1655008977676	geckodriver	INFO	Listening on 127.0.0.1:53301
+1655008977678	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--ignore-certificate-errors" "--incognito" "--remote-debugging-port" "53895" "-no-remote" "-profile" "/tmp/rust_mozprofilepiYhyW"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1655008978491	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilepiYhyW/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53895/devtools/browser/d3585208-64f2-47a7-8236-dc7b57df5e1f
+1655008979998	Marionette	INFO	Listening on port 45597
+1655008980097	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+JavaScript warning: https://cdn.betway.com.gh/bundles/om.js, line 3670: unreachable code after return statement
+console.error: (new TypeError("parent is null", "resource://devtools/client/inspector/shared/style-change-tracker.js", 67))
+TypeError: parent is null: canMutationImpactCurrentStyles@resource://devtools/client/inspector/shared/style-change-tracker.js:67:24
+onMutations@resource://devtools/client/inspector/shared/style-change-tracker.js:84:41
+_emit@resource://devtools/shared/event-emitter.js:242:32
+emit@resource://devtools/shared/event-emitter.js:186:18
+emit@resource://devtools/shared/event-emitter.js:330:18
+getMutations@resource://devtools/client/fronts/walker.js:312:10
+
+console.error: (new TypeError("container.node.targetFront is null", "resource://devtools/client/inspector/markup/markup.js", 2320))
+console.error: (new TypeError("container.node.targetFront is null", "resource://devtools/client/inspector/markup/markup.js", 2320))
+console.error: (new TypeError("container.node.targetFront is null", "resource://devtools/client/inspector/markup/markup.js", 2320))
+console.error: (new TypeError("container.node.targetFront is null", "resource://devtools/client/inspector/markup/markup.js", 2320))
+console.error: (new TypeError("container.node.targetFront is null", "resource://devtools/client/inspector/markup/markup.js", 2320))
+console.error: (new TypeError("container.node.targetFront is null", "resource://devtools/client/inspector/markup/markup.js", 2320))
+console.error: (new TypeError("container.node.targetFront is null", "resource://devtools/client/inspector/markup/markup.js", 2320))
+console.error: (new TypeError("container.node.targetFront is null", "resource://devtools/client/inspector/markup/markup.js", 2320))
+console.error: (new TypeError("container.node.targetFront is null", "resource://devtools/client/inspector/markup/markup.js", 2320))
+console.error: (new TypeError("container.node.targetFront is null", "resource://devtools/client/inspector/markup/markup.js", 2320))
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1655009578608	geckodriver	INFO	Listening on 127.0.0.1:60867
+1655009578623	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--ignore-certificate-errors" "--incognito" "--remote-debugging-port" "54189" "-no-remote" "-profile" "/tmp/rust_mozprofileic0Dyh"
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+ATTENTION: default value of option mesa_glthread overridden by environment.
+1655009579208	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileic0Dyh/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54189/devtools/browser/a39a3072-c0fa-4208-a2e0-a42c09d56551
+1655009580227	Marionette	INFO	Listening on port 45895
+1655009580239	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+JavaScript warning: https://cdn.betway.com.gh/bundles/om.js, line 3670: unreachable code after return statement
+1655009662581	Marionette	INFO	Stopped listening on port 45895
+
+###!!! [Parent][PImageBridgeParent] Error: RunMessage(msgname=PImageBridge::Msg_WillClose) Channel closing: too late to send/recv, messages will be lost
+
+Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo

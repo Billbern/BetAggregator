@@ -1,0 +1,26 @@
+[1654880721.314][INFO]: Starting ChromeDriver 102.0.5005.61 (0e59bcc00cc4985ce39ad31c150065f159d95ad3-refs/branch-heads/5005@{#819}) on port 55651
+[1654880721.314][INFO]: Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+[1654880721.813][INFO]: [cae1445dfc0b805742d615cb79bd33a7] COMMAND InitSession {
+   "capabilities": {
+      "alwaysMatch": {
+         "browserName": "chrome",
+         "goog:chromeOptions": {
+            "args": [ "--ignore-certificate-errors", "--incognito", "--headless" ],
+            "extensions": [  ]
+         },
+         "pageLoadStrategy": "normal"
+      },
+      "firstMatch": [ {
+
+      } ]
+   },
+   "desiredCapabilities": {
+      "browserName": "chrome",
+      "goog:chromeOptions": {
+         "args": [ "--ignore-certificate-errors", "--incognito", "--headless" ],
+         "extensions": [  ]
+      },
+      "pageLoadStrategy": "normal"
+   }
+}
+[1654880721.818][INFO]: [cae1445dfc0b805742d615cb79bd33a7] RESPONSE InitSession ERROR unknown error: cannot find Chrome binary
