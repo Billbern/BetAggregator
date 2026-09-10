@@ -1,0 +1,842 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    overflow: hidden;
+    background-color: #f5f5f7;
+    font-family: Helvetica, sans-serif;
+}
+
+body .container{
+    gap: 0;
+    display: flex;
+    height: inherit;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.container .headerbox {
+    width: 100%;
+    height: 96px;
+    background-color: #fff;
+    box-shadow: 0px 1px 4px 0px #ccc;
+    -webkit-box-shadow: 0px 1px 4px 0px #ccc;
+    -moz-box-shadow: 0px 1px 4px 0px #ccc;
+}
+
+ 
+.headerbox .box-holder{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.headerbox .box-holder > div {
+    width: 100%;
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 32px;
+}
+
+.headerbox .box-holder > div:first-child{
+    background-color: #242938;
+}
+
+.headerbox .box-holder > div > div:first-child {
+    height: 100%;
+    color: #fff;
+    display: flex;
+    grid-column: 3/6;
+    align-items: center;
+}
+
+.headerbox .box-holder > div:first-child select{
+    background-color: #fff;
+    padding: 6px 8px;
+}
+
+.headerbox .box-holder > div a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.headerbox .box-holder > div a h2::selection{
+    background-color: #f33558;
+    color: #fff;
+}
+
+.headerbox .box-holder > div > div:last-child{
+    height: 100%;
+    display: flex;
+    grid-column: 6/11;
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.headerbox .box-holder > div button{
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 2px;
+    position: relative;
+}
+
+.box-holder > div:last-child > div:first-child{
+    grid-column: 3/8;
+}
+
+.box-holder > div:last-child > div:last-child{
+    grid-column: 8/11;
+}
+
+.headerbox .box-holder > div ul{
+    display: flex;
+    color: #242938;
+    list-style: none;
+    align-items: center;
+    gap: 0 16px;
+}
+
+.headerbox .box-holder > div ul li {
+    display: flex;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    align-items: center;
+    background-color: #f3f4f5;
+}
+
+.headerbox .box-holder > div button.start-btn{
+    border: none;
+    padding: 8px 16px;
+    margin-left: 16px;
+    background-color: rgb(10, 10, 218);
+}
+
+.headerbox .box-holder > div button.start-btn .anime{
+    display: none;
+    background-color: #f33558;
+    border-radius: 2px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: display 2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.headerbox .box-holder > div .start-btn.loading .anime{
+    display: flex;
+}
+
+.box-holder > div button.start-btn .anime span{
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.box-holder > div button.start-btn .anime span:first-child{
+    animation: bounce 0.5s;
+    animation-timing-function: cubic-bezier(0.5, 0.055, 1, 0.5);
+    animation-iteration-count: infinite;
+}
+
+.box-holder > div button.start-btn .anime span:nth-child(2){
+    animation: bounce 0.5s;
+    animation-delay: 0.1s;
+    animation-timing-function: cubic-bezier(0.5, 0.055, 1, 0.5);
+    animation-iteration-count: infinite;
+}
+
+.box-holder > div button.start-btn .anime span:last-child{
+    animation: bounce 0.5s;
+    animation-delay: 0.2s;
+    animation-timing-function: cubic-bezier(0.5, 0.055, 1, 0.5);
+    animation-iteration-count: infinite;
+}
+
+
+.headerbox .box-holder > div button.show-btn{
+    padding: 4px 12px;
+    border: 2px solid white;
+    background-color: transparent;
+}
+
+
+.headerbox .box-holder > div:last-child > div{
+    gap: 0 16px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.headerbox .box-holder > div input[type=text]{
+    padding: 6px 16px;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: rgb(85, 85, 85, 0.35);
+}
+
+.headerbox .box-holder > div input[type=button], 
+.headerbox .box-holder > div select{
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.headerbox .box-holder > div input[type=text]:focus{
+    outline: none;
+    border: 1px solid rgb(241, 76, 107, 0.7);
+    box-shadow: 0 0 2px rgb(241, 76, 107, 0.7);
+}
+
+.headerbox .box-holder > div select{
+    border: 1px solid rgba(85,85,85,0.35);
+    background-color: transparent;
+}
+
+.headerbox .box-holder > div input[type=button]{
+    background-color: #f33558;
+    position: relative;
+    color: white;
+}
+
+.headerbox .box-holder > div input[type=button]:focus{
+    animation: pressed 0.2s;
+    animation-timing-function: cubic-bezier(0.5, 0.055, 1, 0.5);
+    animation-iteration-count: 1;
+}
+
+.container .bodybox{
+    width: 100%;
+    height: calc(100% - 96px);
+    padding: 32px 0 16px 0;
+
+}
+
+.bodybox .box-glue{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+}
+
+.box-glue .side-selector{
+    grid-column: 3/6;
+}
+
+.box-glue .side-display{
+    grid-column: 6/11;
+}
+
+.box-glue .side-selector,
+.box-glue .side-display{
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 1px 4px 0px #ccc;
+    -webkit-box-shadow: 0px 1px 4px 0px #ccc;
+    -moz-box-shadow: 0px 1px 4px 0px #ccc;
+}
+
+.side-selector .inner-side{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.inner-side > div{
+    width: 100%;
+    padding: 16px;
+    min-height: 64px;
+}
+
+.inner-side > div:nth-child(2){
+    box-shadow: 0px 1px 4px 0px #dedfe1;
+    -webkit-box-shadow: 0px 1px 4px 0px #dedfe1;
+    -moz-box-shadow: 0px 1px 4px 0px #dedfe1;
+}
+
+.inner-side > div:first-child{
+    border-bottom: 1px solid #dedfe1;
+}
+
+.inner-side .selector-filter{
+    gap: 8px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.selector-filter > div{
+    gap: 8px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.selector-filter > div input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 16px;
+    padding-left: 48px;
+}
+
+.selector-filter > div input:focus{
+    outline: none;
+}
+
+.selector-filter > div > div{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    top: 0;
+}
+
+.selector-filter > div span,
+.selector-filter > div label{
+    position: relative;
+    cursor: pointer;
+    bottom: -3px;
+}
+
+.selector-filter > div > div:first-child{
+    left: 0;
+    padding-left: 16px;
+}
+
+.selector-filter > div > div:last-child{
+    right: 0;
+    padding-right: 16px;
+}
+
+.selector-filter > div span::after{
+    content: "";
+    background-color: transparent;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.selector-filter > div span svg,
+.selector-filter > div label svg{
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    -o-object-fit: contain;
+    object-position: center;
+    -o-object-position: center;
+}
+
+
+.inner-side .selector-sort{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selector-sort > div:first-child{
+    gap: 16px;
+    height: 100%;
+    display: flex;
+    color: #212121;
+    align-items: center;
+    justify-content: center;
+}
+
+.selector-sort > div .selector-input{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+    top: -1px;
+}
+
+.selector-input input{
+    position: absolute;
+    opacity: 0;
+    height: 100%;    
+    width: 100%;
+    z-index: 5;
+    left: 0;
+    top: 0;
+}
+
+.selector-input .checked{
+    border-radius: 4px;
+    position: relative;
+    display: inline-block;
+    border: 2px solid #757575;
+    height: 100%;
+    width: 100%;
+    transition: background 200ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.selector-input .checked::after{
+    display: none;
+    content: '';
+    width: 6px;
+    height: 12px;
+    position: absolute;
+    border-radius: 1px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 3px;
+    top: -2px;
+}
+
+.selector-input input:checked ~ .checked{
+    background-color: #f33558;
+    border-color: #f33558;
+}
+
+.selector-input input:checked ~ .checked::after{
+    display: block;
+}
+
+.selector-sort > div:last-child{
+    color: #93959e;
+}
+
+.selector-sort .sort-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selector-sort > div span.drop {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+}
+
+.selector-sort div .drop svg{
+    height: 80%;
+    width: 70%;
+}
+
+.selector-sort div .drop::after{
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+
+.inner-side .selector-items{
+    padding: 0;
+    overflow-y: scroll;
+    min-height: calc(100% - 128px);
+    scrollbar-width: none;
+}
+
+.inner-side .selector-items::-webkit-scrollbar{
+    width: 0;
+}
+
+.selector-items .items-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.items-container .item-slip{
+    width: 100%;
+    height: 96px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #dedfe1;
+    border-left: 4px solid white;
+    position: relative;
+}
+
+.items-container .item-slip::after{
+    content: "";
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+}
+
+.items-container .item-slip.active{
+    border-left: 4px solid #f33558;
+}
+
+.items-container .item-slip .slip-contain{
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 24px 8px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.item-slip .slip-contain .slip-icon{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slip-contain .slip-icon span{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f7;
+    border-radius: 50%;
+}
+
+.slip-contain .slip-icon span svg{
+    width: 70%;
+    height: 70%;
+    fill: rgb(10, 10, 218);
+}
+
+.item-slip .slip-contain .slip-content{
+    display: flex;
+    align-items: center;
+    width: calc(100% - 32px);
+    justify-content: space-between;
+}
+
+.slip-content .content-left{
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slip-content .content-left .slip-code{
+    font-size: 16px;
+    color: #212121;
+    font-weight: bold;
+}
+
+.item-slip.active .content-left .slip-code{
+    color: #f33558;
+}
+
+.slip-content .content-left .slip-gme{
+    font-size: 14px;
+    color: #7b7b7b;
+}
+
+.slip-content .content-right{
+    padding-right: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px 0;
+}
+
+.slip-content .content-right span,
+.slip-content .content-right > div{
+    color: #7b7b7b;
+    font-size: 14px;
+    font-weight: bold;
+    align-self: flex-end;
+}
+
+.side-display .gme-projector{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gme-projector .no-gme{
+    gap: 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    font-size: 24px;
+    color: #dedfe1;
+}
+
+.gme-projector .yes-gme{
+    height: 100%;
+    overflow: hidden;
+}
+
+.yes-gme .single-contain{
+    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.yes-gme .single-contain .code-details {
+    width: 100%;
+    height: 128px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 16px 16px 0px 16px;
+}
+
+.code-details .slip-details{
+    gap: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.slip-details .slip-icon{
+    align-self: flex-start;
+}
+
+.slip-details .slip-icon span {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f7;
+    border-radius: 50%;
+}
+
+.slip-details .slip-icon span svg {
+    width: 70%;
+    height: 70%;
+    fill: rgb(10, 10, 218);
+}
+
+.code-details .slip-details .slip-body{
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.slip-body > div:first-child input[type=text]{
+    font-size: 20px;
+    font-weight: bold;
+    color: #f33558;
+    cursor: pointer;
+    border: none;
+    padding: 2px;
+}
+
+.slip-body > div:first-child input[type=text]::selection{
+    background-color: rgb(10, 10, 218);
+}
+
+.slip-body > div:first-child input[type=text]:focus{
+    outline: none;
+}
+
+.slip-body > div:last-child {
+    gap: 16px;
+    font-size: 14px;
+    color: #7b7b7b;
+    display: flex;
+    align-items: center;
+}
+
+.slip-body > div:last-child > div{
+    gap: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.slip-body > div:last-child > div span.icon{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slip-body > div:last-child > div:first-child span.icon svg{
+    width: 100%;
+    height: 100%;
+}
+
+.slip-body > div:last-child > div:last-child span.icon svg{
+    width: 75%;
+    height: 75%;
+}
+
+.code-details .gme-details{
+    gap: 16px;
+    width: 100%;
+    display: flex;
+}
+
+.code-details .gme-details span{
+    color: #7b7b7b;
+    padding: 4px 0px;
+    display: inline-block;
+}
+
+.code-details .gme-details span.active{
+    color: #212121;
+    border-bottom: 2px solid #f33558;
+}
+
+.yes-gme .single-contain .gap{
+    width: 100%;
+    height: 23px;
+    border: 1px solid #dedfe1;
+    border-left: none;
+    border-right: none;
+    background-color: #f5f5f7;
+}
+
+.yes-gme .single-contain .code-gmes{
+    width: 100%;
+    overflow-y: scroll;
+    height: calc(100% - 151px);
+    scrollbar-width: none;
+}
+
+.yes-gme .single-contain .code-gmes::-webkit-scrollbar{
+    width: 0;
+}
+
+.single-contain .code-gmes .gmes-contain{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.code-gmes .gmes-contain > div {
+    gap: 8px;
+    width: 100%;
+    height: 128px;
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #dedfe1;
+}
+
+.gmes-contain > div > div:first-child{
+    align-self: stretch;
+    padding-top: 25px;
+}
+
+.gmes-contain > div .gme-content{
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gme-content .gme-match{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.gme-content .gme-option{
+    font-size: 14px;
+    color: #7b7b7b;
+}
+
+.container .tipper{
+    width: 200px;
+    height: 64px;
+    position: absolute;
+    border-radius: 8px;
+    background-color: #fff;
+    bottom: 16px;
+    right: 16px;
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.35);
+    -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.35);
+    transition: display 2s cubic-bezier(1, 0, 0, 1);
+}
+
+.container .tipper > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .tipper.hide{
+    display: none;
+}
+
+
+@keyframes bounce {
+    0%{
+        transform: translateY(0);
+    }
+    25%{
+        transform: translateY(-2px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+    75%{
+        transform: translateY(2px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes pressed {
+    0%{
+        transform: scale(0, 0);
+    }
+
+    50% {
+        transform: scale(-2px, -2px);
+    }
+
+    100%{
+        transform: scale(0, 0);
+    }
+}
