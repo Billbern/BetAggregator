@@ -1,5 +1,6 @@
-from app import celery
+from app.celery_app import celery
 
-@celery.task()
+
+@celery.task(name="app.utils.celerytasks.get_bet_slips")
 def get_bet_slips():
-    pass
+    """Placeholder for the future scrape-and-persist pipeline (Batch 3)."""

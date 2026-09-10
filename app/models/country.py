@@ -1,12 +1,12 @@
-from app import db
+from app.extensions import db
 
 
 class Country(db.Model):
-    __tablename__ = 'country'
+    __tablename__ = "country"
 
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(255), nullable=False)
-    leagues = db.relationship('League', backref='country')
+    leagues = db.relationship("League", backref="country")
 
     def __repr__(self):
-        return '<Country: {}>'.format(self.name)
+        return f"<Country: {self.name}>"

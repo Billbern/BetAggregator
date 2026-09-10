@@ -1,20 +1,24 @@
 from celery import Celery
 
 
-def make_celery(app):
+def make_celery(app, include=None):
+    """Build a Celery instance whose tasks run inside the Flask app context."""
     celery = Celery(
         app.import_name,
-        backend=app.config['CELERY_BACKEND_URL'],
-        broker=app.config['CELERY_BROKER_URL']
+        include=include or [],
+        broker=app.config.get("CELERY_BROKER_URL", "redis://localhost:6379/0"),
+        result_backend=app.config.get(
+            "CELERY_BACKEND_URL", "redis://localhost:6379/1"
+        ),
     )
-    
     celery.conf.update(app.config)
-    
+
     class ContextTask(celery.Task):
-        
-        def __call__(self, *args, **kwds):
+        abstract = True
+
+        def __call__(self, *args, **kwargs):
             with app.app_context():
-                return self.run(*args, **kwds)
-    
+                return self.run(*args, **kwargs)
+
     celery.Task = ContextTask
     return celery

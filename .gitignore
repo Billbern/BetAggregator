@@ -1,5 +1,32 @@
+# Environment / secrets
 .env
+.env.*
+!.env.example
+
+# Virtual environments
+.venv/
+venv/
+betvenv/
+
+# Python
 __pycache__/
-betvenv
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+htmlcov/
+build/
+dist/
+
+# Logs and local artifacts
+logs/
+*.log
+*.dev.db
+data/
+
+# Bookmaker scraping binaries (fetched at build time, never committed)
+geckodriver
+
+# Scratch
 betway
 *.ipynb
