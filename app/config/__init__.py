@@ -16,20 +16,17 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL", _DEFAULT_DB_URI)
 
     CELERY_BROKER_URL = os.environ.get("CELERY_BROKER_URL", "redis://localhost:6379/0")
-    CELERY_BACKEND_URL = os.environ.get(
-        "CELERY_BACKEND_URL", "redis://localhost:6379/1"
-    )
+    CELERY_BACKEND_URL = os.environ.get("CELERY_BACKEND_URL", "redis://localhost:6379/1")
 
     LOG_LEVEL = os.environ.get("LOG_LEVEL", "INFO")
     SOCKETIO_ASYNC_MODE = os.environ.get("SOCKETIO_ASYNC_MODE", "threading")
-    SOCKETIO_CORS_ALLOWED_ORIGINS = os.environ.get(
-        "SOCKETIO_CORS_ALLOWED_ORIGINS", "*"
-    )
+    SOCKETIO_CORS_ALLOWED_ORIGINS = os.environ.get("SOCKETIO_CORS_ALLOWED_ORIGINS", "*")
 
 
 class DevelopmentConfig(Config):
     DEBUG = True
     DEVELOPMENT = True
+    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
 
 
 class TestingConfig(Config):

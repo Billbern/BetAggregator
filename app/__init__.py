@@ -29,10 +29,14 @@ def create_app(config_name: str | None = None) -> Flask:
 
     # Importing models registers them with SQLAlchemy's metadata (needed by Alembic).
     from app import models  # noqa: F401
-
+    from app.cli import register_cli_commands
     from app.routes import main_bp
+    from app.socket import register_socket_handlers
 
+    register_cli_commands(app)
     app.register_blueprint(main_bp)
+    # Importing the socket module registers the Socket.IO event handlers.
+    register_socket_handlers()
     return app
 
 
