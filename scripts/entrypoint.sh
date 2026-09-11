@@ -33,8 +33,8 @@ else:
     sys.exit(0)
 PY
 
-echo "==> entrypoint: applying migrations"
-flask --app wsgi db upgrade
+echo "==> entrypoint: applying migrations (advisory-locked)"
+python scripts/run_migrations.py
 
 case "$SERVICE" in
   web)
