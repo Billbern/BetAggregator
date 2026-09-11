@@ -24,6 +24,7 @@ dependencies = [
     "gunicorn>=22.0",
     "gevent>=24.2",
     "gevent-websocket>=0.10.1",
+    "whitenoise>=6.12.0",
 ]
 
 [project.optional-dependencies]
