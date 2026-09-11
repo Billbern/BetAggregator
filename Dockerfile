@@ -21,8 +21,8 @@ RUN pip install -e .
 
 # geckodriver is fetched at build time (never committed). Pin a known-good
 # version and verify its checksum to keep the supply chain clean.
-ARG GECKODRIVER_VERSION=v0.34.0
-ARG GECKODRIVER_SHA256=9a7373bd72793b0f1e0a29a3316d0e519a566230c2903685988ac85ffe42ff34
+ARG GECKODRIVER_VERSION=v0.37.1
+ARG GECKODRIVER_SHA256=e815130ea95983e162ae91843b48d3a3ce991735635fce83a647afde21e09f7e
 RUN curl -fsSLo /tmp/geckodriver.tar.gz \
         "https://github.com/mozilla/geckodriver/releases/download/${GECKODRIVER_VERSION}/geckodriver-${GECKODRIVER_VERSION}-linux64.tar.gz" \
     && echo "${GECKODRIVER_SHA256}  /tmp/geckodriver.tar.gz" | sha256sum -c - \
