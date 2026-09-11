@@ -39,7 +39,7 @@ python scripts/run_migrations.py
 case "$SERVICE" in
   web)
     echo "==> starting web (gunicorn+gevent)"
-    exec gunicorn --bind 0.0.0.0:5000 \
+    exec gunicorn wsgi:app --bind 0.0.0.0:5000 \
         -k gevent --worker-connections 1000 \
         --workers "${WEB_WORKERS:-2}" \
         "$@";;
